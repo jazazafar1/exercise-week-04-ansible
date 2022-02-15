@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-playbook.json": "docker://5cedc40125f87174a357e73e8e86f4c3784544f4b9b5138681b4aadc7bb7c761/work/03-get_facts/get_facts.yaml?fileType%3Dfile%26containerOS%3Dlinux%26path%3D%252Fwork%252F03-get_facts%252Fget_facts.yaml"
+    }
+}
