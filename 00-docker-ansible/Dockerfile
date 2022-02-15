@@ -24,7 +24,7 @@ RUN pip3 install --upgrade pip; \
     ansible-galaxy collection install f5networks.f5_modules; \
     git config --global user.name "jazazafar1"; \
     git config --global user.email "zafarjaz@sheridancollege.ca"; \
-    git clone https://github.com/jazazafar1/exercise-week-04-ansible.git \work\;
+    git clone https://github.com/jazazafar1/exercise-week-04-ansible.git \work;
 
 WORKDIR /work
 
