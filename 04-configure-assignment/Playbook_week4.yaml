@@ -1,0 +1,36 @@
+---
+- name: gather information from routers
+  hosts: cisco
+  gather_facts: no
+   
+  tasks:
+    - name: Gather all legacy facts
+      cisco.ios.ios_facts:
+        gather_subset: all
+
+    - name: Display Model number 
+      debug:
+        msg: "The IOS model is {{ansible_net_model}}"  
+
+    - name: Display Version number 
+      debug:
+        msg: "The IOS Version is {{ansible_net_version}}"      
+
+    - name: Display Switch hostname
+      debug:
+        msg: "The Hostname of the switch it {{ansible_net_hostname}}" 
+
+    - name: Configure the login banner
+      cisco.ios.ios_banner:
+        banner: login
+        text: |
+          This is my login banner
+          that contains a multiline
+          string
+        state: present      
+
+    - name: Get management interface information
+      debug:
+        msg: "The management interface is {{ansible_net_interfaces.GigabitEthernet1 }} and the IP address is {{ansible_net_interfaces.GigabitEthernet1.ipv4 }} and the status of this interface is {{ansible_net_interfaces.GigabitEthernet1.lineprotocol }}"     
+
+        

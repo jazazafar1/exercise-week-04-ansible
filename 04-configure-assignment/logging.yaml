@@ -1,0 +1,11 @@
+---
+- name: Set logging configurations
+  hosts: cisco
+  gather_facts: no
+   
+  tasks:
+    - name: Change logging information
+      cisco.ios.ios_config:
+        commands: 
+        - logging host 8.8.8.8
+        - logging host 8.8.4.4

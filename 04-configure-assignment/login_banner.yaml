@@ -1,0 +1,25 @@
+---
+- name: gather information from routers
+  hosts: cisco
+  gather_facts: no
+   
+  tasks:
+    - name: Gather all legacy facts
+      cisco.ios.ios_facts:
+
+        gather_subset: all
+
+    - name: Configure the login banner
+      cisco.ios.ios_banner:
+        banner: login
+        text: |
+            ----------------------------------------
+            |                                       |
+            |         Jaza's login banner :)        | 
+            |                                       |
+            ----------------------------------------
+            |                                       |
+            | You are logged into {{ inventory_hostname }}
+            |                                       |
+            ----------------------------------------
+        state: present
